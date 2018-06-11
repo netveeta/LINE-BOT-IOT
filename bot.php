@@ -29,8 +29,7 @@ if (!is_null($events['events'])) {
 			getMqttfromlineMsg($Topic,$text);//เรียกฟังชั่นที่ pub.php
 			// Make a POST Request to Messaging API to reply to sender
 			
-			$replyToken = $event['replyToken'];
-			// Make a POST Request to Messaging API to reply to sender
+
 			$url = 'https://api.line.me/v2/bot/message/reply';
 		
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);

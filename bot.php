@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
 			// Make a POST Request to Messaging API to reply to sender
 			$url1 = 'https://api.line.me/v2/bot/message/reply';
 			$headers1 = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token1);
-                        if($text1=="สวัสดี"){
+                        if($text=="สวัสดี"){
 			// Build message to reply back
 			$messages1 = [
 				'type' => 'text',
@@ -42,14 +42,14 @@ if (!is_null($events['events'])) {
 			];
 			$post1 = json_encode($data1);
 			$ch1 = curl_init($url1);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post1);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers1);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			$result = curl_exec($ch1);
+			curl_setopt($ch1, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch1, CURLOPT_POSTFIELDS, $post1);
+			curl_setopt($ch1, CURLOPT_HTTPHEADER, $headers1);
+			curl_setopt($ch1, CURLOPT_FOLLOWLOCATION, 1);
+			$result1 = curl_exec($ch1);
 			curl_close($ch1);
-			echo $result . "\r\n";
+			echo $result1 . "\r\n";
                         }//end if
 		}
 	}

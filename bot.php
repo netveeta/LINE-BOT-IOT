@@ -27,33 +27,28 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$Topic = "NodeMCU1" ;
 			getMqttfromlineMsg($Topic,$text);//เรียกฟังชั่นที่ pub.php
-			   
-			//Get Message
-			$text1 = $event['message']['text'];
-			// Get replyToken
-			$replyToken = $event['replyToken'];
 			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/reply';
-			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			$url1 = 'https://api.line.me/v2/bot/message/reply';
+			$headers1 = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
                         if($text1=="สวัสดี"){
 			// Build message to reply back
-			$messages = [
+			$messages1 = [
 				'type' => 'text',
 				'text' => "จ่าเฉยยินดีรับใช้ครับ"
 			];
-			$data = [
-				'replyToken' => $replyToken,
-				'messages' => [$messages],
+			$data1 = [
+				'replyToken' => $replyToken1,
+				'messages' => [$messages1],
 			];
-			$post = json_encode($data);
-			$ch = curl_init($url);
+			$post1 = json_encode($data1);
+			$ch1 = curl_init($url1);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post1);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers1);
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			$result = curl_exec($ch);
-			curl_close($ch);
+			$result = curl_exec($ch1);
+			curl_close($ch1);
 			echo $result . "\r\n";
                         }//end if
 		}

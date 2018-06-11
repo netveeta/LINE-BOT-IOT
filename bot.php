@@ -33,7 +33,8 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 		
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-                        if($text=="สวัสดี"){
+                        //if($text=="สวัสดี"){
+			if(strstr($text,"สวัสดี")){
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',

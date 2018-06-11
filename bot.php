@@ -5,7 +5,7 @@
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
-
+$access_token1 = 'vIqVV9lNX5yNkf7r4nm+FFAesNeaypSuYC/OOW9LOiRptDrt0/ELtOJekuhmabamyn5ssrtDODisO/XE2wvauE7MTr1C0xIY84aHbRZRQDRtEojxs7UtkvssK7Y4eS4Xj/r+krB7u9ueoZVAjmOvMwdB04t89/1O/w1cDnyilFU='; 
 $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['ESP'])) {
@@ -29,7 +29,7 @@ if (!is_null($events['events'])) {
 			getMqttfromlineMsg($Topic,$text);//เรียกฟังชั่นที่ pub.php
 			// Make a POST Request to Messaging API to reply to sender
 			$url1 = 'https://api.line.me/v2/bot/message/reply';
-			$headers1 = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			$headers1 = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token1);
                         if($text1=="สวัสดี"){
 			// Build message to reply back
 			$messages1 = [

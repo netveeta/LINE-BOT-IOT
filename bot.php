@@ -41,7 +41,8 @@ if (!is_null($events['events'])) {
 				'text' => "จ่าเฉยยินดีรับใช้ครับ"
 			];
 			$data = [
-				'replyToken' => $replyToken,
+				//'replyToken' => $replyToken,
+				'replyToken' => 'Cbba671d3c1043d9d231a951b25edc69b',
 				'messages' => [$messages],
 			];
 			$post = json_encode($data);

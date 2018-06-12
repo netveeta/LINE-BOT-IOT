@@ -42,7 +42,7 @@ if (!is_null($events['events'])) {
 			];
 			$data = [
 				//'replyToken' => $replyToken,
-				'replyToken' => 'Cbba671d3c1043d9d231a951b25edc69b',
+				'To' => "Cbba671d3c1043d9d231a951b25edc69b",
 				'messages' => [$messages],
 			];
 			$post = json_encode($data);
